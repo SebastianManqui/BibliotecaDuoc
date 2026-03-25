@@ -1,0 +1,3 @@
+import com.example.biblioteca.model.Libro
+import com.example.biblioteca.repository.LibroRepository
+import org.springframework.beans.factory.annotation.Autowired;

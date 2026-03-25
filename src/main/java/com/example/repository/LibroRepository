@@ -14,4 +14,68 @@ public class LibroRepository {
     public List<Libros> obtenerLibros(){
         return listaLibros;
     }
+
+
+    public Libro buscarPorId(int id){
+        for (Libro libro : listarLibros){
+            if(libro.getId() == id){
+                return libro;
+            }
+        }
+        return null;
+    }
+
+    public Libro buscarPorIsbn(String isbn){
+        for(Libro libro : listarLibros){
+            if (libro.getIsbn().equals(isbn))[
+                return libro;
+            ]
+        }
+        return null;
+    }
+
+    public Libro guardar(Libro lib){
+        listarLibros.add(lib);
+        return lib;
+    }
+    public Libro actualizar(Libro lib){
+        int id = 0;
+        int idPosicion = 0;
+        for (int i = 0; i < listarLibros.size();i++){
+            if(listarLibros.get(i.getId() == lib.getId()){
+                id = lib.getId();
+                idPosicion = i;
+            }
+        }
+        Libro libro1 = new Libro();
+        Libro1.setId(id);
+        Libro1.setTitulo(lib.getTitulo());
+        Libro1.setAutor(lib.getAutor());
+        Libro1.setFechaPublicacion(lib.getFechaPublicacion());
+        Libro1.setEditorial(lib.getEditorial());
+        Libro1.setIsbn(lib.getIsbn());
+
+        listarLibros.set(idPosicion, libro1);
+        return libro1;
+    }
+
+
+    public void eliminae(int id){
+        Libri libro = buscarPorId(id);
+        if (libro != null){
+            listarLibros.remove(libro);
+        }
+        int idPosicion = 0;
+        for(int i = 0; i < listarLibros.size(); i++){
+            if(listarLibros.get(i).getId() == id){
+                idPosicion = i;
+                break;
+
+            }
+        if (idPosicion > 0){
+            listarLibros.remove(idPosicion);
+        }
+        listarLibros.removeIf(z -> x.getId() ==id);
+        }
+    }
 }
